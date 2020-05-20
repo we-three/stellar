@@ -1,0 +1,8 @@
+{
+  "name": "stellar",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:we-three/stellar.git",
+  "author": "dumeng <dumeng@outlook.com>",
+  "license": "MIT"
+}

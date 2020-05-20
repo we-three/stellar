@@ -1,0 +1,72 @@
+// align
+$aligns: left, center, right;
+
+@each $a in $aligns {
+  .text-#{$a} {
+    text-align: $a;
+  }
+}
+
+// vertical align
+$verticals: middle, top, bottom, baseline;
+@each $a in $verticals {
+  .vertical-#{$a} {
+    vertical-align: $a;
+  }
+}
+
+.text-height-1 {
+  line-height: 1;
+}
+// size
+
+// text sizes
+$scale: 0.0625;
+$sizes: (
+  headline1: 96,
+  headline2: 60,
+  headline3: 48,
+  headline4: 34,
+  headline5: 24,
+  headline6: 20,
+  subtitle1: 16,
+  subtitle2: 14,
+  body1: 16,
+  body2: 14,
+  button: 14,
+  caption: 12,
+  overline: 10,
+);
+@each $n, $s in $sizes {
+  .text-#{$n} {
+    font-size: $s * $scale + rem;
+  }
+}
+
+// and add special
+.text-headline1,
+.text-headline2 {
+  font-weight: light;
+}
+.text-headline6,
+.text-subtitle2 {
+  font-weight: medium;
+}
+
+// weight
+$weights: light, normal, bold;
+
+@each $w in $weights {
+  .text-#{$w} {
+    font-weight: $w;
+  }
+}
+
+// whitespace
+$whitspaces: normal, nowrap, pre, pre-line, pre-wrap;
+
+@each $w in $whitspaces {
+  .whitespace-#{$w} {
+    white-space: $w;
+  }
+}

@@ -1,0 +1,53 @@
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+
+// justify-content, align-content
+$content-type: space-between, space-around, center, flex-start, flex-end;
+
+@each $j in $content-type {
+  // special case for `flex-start` and `flex-end`
+  $postfix: if(str-index($j, flex), str-slice($j, 6), $j);
+  .justify-#{$postfix} {
+    justify-content: $j;
+  }
+
+  .align-#{$postfix} {
+    align-content: $j;
+  }
+}
+
+// align-items
+$align-items: stretch, center, flex-start, flex-end;
+
+@each $j in $align-items {
+  // special case for `flex-start` and `flex-end`
+  $postfix: if(str-index($j, flex), str-slice($j, 6), $j);
+  .items-#{$postfix} {
+    align-items: $j;
+  }
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+@each $d in 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 {
+  .flex-#{$d} {
+    flex: $d;
+  }
+}
+
+// align-self
+$align-self: flex-start, flex-end, center, stretch, initial;
+
+@each $a in $align-self {
+  // special case for `flex-start` and `flex-end`
+  $postfix: if(str-index($a, flex), str-slice($a, 6), $a);
+  .self-#{$postfix} {
+    align-self: $a;
+  }
+}

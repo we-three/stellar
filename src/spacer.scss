@@ -1,0 +1,66 @@
+// spacer utils
+$sizes: 1, 2, 3, 4, 5, 6, 7, 8;
+$base: 1rem;
+$dirs: (
+  t: top,
+  l: left,
+  b: bottom,
+  r: right,
+);
+$sp: (
+  m: margin,
+  p: padding,
+);
+
+@each $size in $sizes {
+  @each $s, $p in $sp {
+    .#{$s}x-#{$size} {
+      #{$p}-left: $base * $size;
+      #{$p}-right: $base * $size;
+    }
+    .#{$s}y-#{$size} {
+      #{$p}-top: $base * $size;
+      #{$p}-bottom: $base * $size;
+    }
+  }
+
+  @each $abbr, $dir in $dirs {
+    .m#{$abbr}-#{$size} {
+      margin-#{$dir}: $base * $size;
+    }
+    .p#{$abbr}-#{$size} {
+      padding-#{$dir}: $base * $size;
+    }
+  }
+}
+.mr-0d5 {
+  margin-right: 0.5 * $base;
+}
+.mb-0d5 {
+  margin-bottom: 0.5 * $base;
+}
+.pr-0d5 {
+  padding-right: 0.5 * $base;
+}
+.pl-0d5 {
+  padding-left: 0.5 * $base;
+}
+.pt-0d5 {
+  padding-top: 0.5 * $base;
+}
+.pb-0d5 {
+  padding-bottom: 0.5 * $base;
+}
+.px-0d5 {
+  @extend .pl-0d5;
+  @extend .pr-0d5;
+}
+.py-0d5 {
+  @extend .pt-0d5;
+  @extend .pb-0d5;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
